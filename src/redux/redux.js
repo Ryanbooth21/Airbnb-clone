@@ -3,10 +3,11 @@ import {createStore} from 'redux';
 const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
 const ATTEMPT_LOGIN = 'ATTEMPT_LOGIN';
-const SEARCH_ROOMS = 'SEARCH_ROOMS';
+const SEARCH_HOMES = 'SEARCH_HOMES';
 
-export const searchRooms = () => ({
-  type: SEARCH_ROOMS,
+export const searchRooms = (term) => ({
+  type: SEARCH_HOMES,
+  payload: { searchword: term }
 })
 
 export const attemptLogin = () => ({
@@ -23,14 +24,21 @@ export const logout = () => ({
   payload: { username: '', loggedIn: false }
 })
 
+
+
 let initState = {
   loggingIn: false,
   loggedIn: true,
   username: 'Phil',
+  searchword: '',
+  searchTerms: [],
 }
 
 const reducer = (state = initState, action) => {
   switch (action.type) {
+
+    case SEARCH_HOMES:
+      return Object.assign({}, state, { searchword: action.payload.searchword, searchTerms: state.searchTerms.concat(action.payload.searchword) })
     
     case ATTEMPT_LOGIN:
       return Object.assign({}, state, { loggingIn: true })

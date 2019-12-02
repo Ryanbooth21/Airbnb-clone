@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
-import {login, logout, attemptLogin} from '../../redux/redux';
+import {login, logout, attemptLogin, searchRooms} from '../../redux/redux';
 import { withRouter } from "react-router-dom";
 import './navbar.css';
 
@@ -29,8 +29,8 @@ class Navbar extends Component {
   
   onKeyPress = (e) => {
     if(e.which === 13) {
+      this.props.searchRooms(this.state.searchValue);
       this.props.history.push('/homes');
-      console.log('hey')
     }
   }
 
@@ -68,7 +68,7 @@ class Navbar extends Component {
         <div style={{display: displayNav }} className="navContainer">
           <div className="navbox">
             <Link to="/"><i className="fab fa-airbnb fa-3x"></i></Link>
-              <input  id="siteSearch" onChange={this.handleChange} onKeyPress={this.onKeyPress} value={this.state.searchValue}/>
+              <input id="siteSearch" onChange={this.handleChange} onKeyPress={this.onKeyPress} placeholder={this.state.searchValue}/>
             {loggedInNav}
           </div>
         </div>
@@ -81,6 +81,7 @@ const actionCreators = {
   logout: logout,
   login: login,
   attemptLogin,
+  searchRooms,
 };
 
 const mapStateToProps = (state) => ({
