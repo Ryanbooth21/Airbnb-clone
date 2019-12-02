@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {login, logout, attemptLogin} from '../../redux/redux';
 import './navbar.css';
@@ -24,11 +25,17 @@ class Navbar extends Component {
   logOut = () => {
     this.props.logout();
   }
+  
+  onKeyPress = (e) => {
+    if(e.which === 13) {
+    }
+  }
 
   render() {
     const {
       loggedIn,
       username,
+      loggingIn
     } = this.props;
 
     const loggedInNav = loggedIn && (username !== '') ? (
@@ -38,7 +45,7 @@ class Navbar extends Component {
         <li><p>Trips</p></li>
         <li><p>Messages</p></li>
         <li><p>Help</p></li>
-        <li><img onClick={this.logOut} src="" alt="" id="avatar"/></li>
+        <li><button onClick={this.logOut}>Log out</button></li>
       </ul>
     ) : (
       <ul id="navList">
@@ -47,16 +54,18 @@ class Navbar extends Component {
         <li><p>Become a host</p></li>
         <li><p>Help</p></li>
         <li><p>Sign up</p></li>
-        <li><button onClick={this.login}>Log in</button></li>
+        <li><Link to="/login" onClick={this.login}>Log in</Link></li>
       </ul>
     )
 
+    const displayNav = loggingIn ? 'none' : 'flex';
+
     return (
       <>
-        <div className="navContainer">
+        <div style={{display: displayNav }} className="navContainer">
           <div className="navbox">
-            <i className="fab fa-airbnb fa-3x"></i>
-            <input id="siteSearch" onChange={this.handleChange} value={this.state.searchValue}/>
+            <Link to="/"><i className="fab fa-airbnb fa-3x"></i></Link>
+              <input  id="siteSearch" onChange={this.handleChange} onKeyPress={this.onKeyPress} value={this.state.searchValue}/>
             {loggedInNav}
           </div>
         </div>
@@ -72,6 +81,7 @@ const actionCreators = {
 };
 
 const mapStateToProps = (state) => ({
+  loggingIn: state.loggingIn,
   loggedIn: state.loggedIn,
   username: state.username,
 })

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {login, logout, attemptLogin} from '../../redux/redux';
 import {connect} from 'react-redux';
+import { withRouter } from "react-router-dom";
 import './login.css';
 
 class LoginModal extends Component {
@@ -9,6 +10,18 @@ class LoginModal extends Component {
     this.state = {
       username: '',
     }
+  }
+
+  redirect = (e) => {
+    e.preventDefault();
+    this.props.logout();
+		this.props.history.push('/');
+  }
+
+  handleLogin = (e) => {
+    e.preventDefault();
+    this.props.login(this.state.username);
+    this.props.history.push('/');
   }
   
   handleChange = (e) => {
@@ -20,7 +33,7 @@ class LoginModal extends Component {
   render() {
     return (
       <>
-      <form onSubmit={()=>this.props.login(this.state.username)}>
+      <form onSubmit={this.handleLogin}>
         <div class="container">
           <label for="uname"><b>Username</b></label>
           <input onChange={this.handleChange} type="text" placeholder="Enter Username" name="uname" required/>
@@ -35,12 +48,11 @@ class LoginModal extends Component {
         </div>
 
         <div class="container" style={{backgroundColor:"#f1f1f1"}}>
-          <button type="button" class="cancelbtn" onClick={()=>this.props.logout()}>Cancel</button>
+          <button type="button" class="cancelbtn" onClick={()=>this.props.logout(), this.redirect}>Cancel</button>
           <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
       </form>
       </>
-
     )
   }
 }

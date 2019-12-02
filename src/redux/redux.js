@@ -3,6 +3,11 @@ import {createStore} from 'redux';
 const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
 const ATTEMPT_LOGIN = 'ATTEMPT_LOGIN';
+const SEARCH_ROOMS = 'SEARCH_ROOMS';
+
+export const searchRooms = () => ({
+  type: SEARCH_ROOMS,
+})
 
 export const attemptLogin = () => ({
   type: ATTEMPT_LOGIN,
@@ -21,7 +26,7 @@ export const logout = () => ({
 let initState = {
   loggingIn: false,
   loggedIn: true,
-  username: 'Phil'
+  username: 'Phil',
 }
 
 const reducer = (state = initState, action) => {

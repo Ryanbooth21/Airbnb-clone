@@ -1,0 +1,43 @@
+.boxContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+h4 {
+  margin: auto auto 30px 30px;
+}
+
+.boxlist {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto auto auto;
+}
+
+.box {
+  margin: 18px 5px;
+  width: 180px;
+  height: 280px;
+  flex: auto;
+}
+
+.img {
+  width: 100%;
+  height: 70%;
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 750px) {
+  .box {
+    width: 243px;
+    height: 378px;
+  }
+
+}
