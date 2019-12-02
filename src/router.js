@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
 import Navbar from './components/navbar/navbar';
 import LoginModal from './components/login/loginModal';
 import App from './App';

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {login, logout, attemptLogin} from '../../redux/redux';
+import { withRouter } from "react-router-dom";
 import './navbar.css';
 
 class Navbar extends Component {
@@ -28,6 +29,8 @@ class Navbar extends Component {
   
   onKeyPress = (e) => {
     if(e.which === 13) {
+      this.props.history.push('/homes');
+      console.log('hey')
     }
   }
 
@@ -86,4 +89,4 @@ const mapStateToProps = (state) => ({
   username: state.username,
 })
 
-export default connect(mapStateToProps, actionCreators)(Navbar);
+export default withRouter(connect(mapStateToProps, actionCreators)(Navbar));

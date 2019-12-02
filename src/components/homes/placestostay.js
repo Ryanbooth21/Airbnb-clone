@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { homesList } from './homeslist';
 import './placestostay.css';
+
 export default class PlacesToStay extends Component {
   render() {
     const places = homesList.map((item)=> {

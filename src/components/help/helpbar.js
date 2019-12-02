@@ -16,9 +16,9 @@ export default class Helpbar extends Component {
           </div>
       </div>
       ) 
-    })
+    });
+
     return (
-      <>
         <div className="helpbarContainer">
           <div className="helpbar">
             <h1>{promptText}</h1>
@@ -27,7 +27,6 @@ export default class Helpbar extends Component {
             </div>
           </div>
         </div>
-      </>
     )
   }
 }

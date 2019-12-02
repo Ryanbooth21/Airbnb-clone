@@ -32,7 +32,6 @@ class LoginModal extends Component {
 
   render() {
     return (
-      <>
       <form onSubmit={this.handleLogin}>
         <div class="container">
           <label for="uname"><b>Username</b></label>
@@ -52,7 +51,6 @@ class LoginModal extends Component {
           <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
       </form>
-      </>
     )
   }
 }
