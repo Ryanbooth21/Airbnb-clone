@@ -54,7 +54,12 @@
 
 @media only screen and (max-width: 650px) {
   .helpbarContainer {
-    height: 60vh;
+    height: 43vh;
+    text-align: center;
+  }
+
+  .boxContainer h4 {
+    margin: auto;
   }
 }
 
@@ -82,7 +87,7 @@
 
   .helpbarContainer {
     width: 100%;
-    height: 45vh;
+    height: 38vh;
     display: flex;
     justify-content: center;
   }

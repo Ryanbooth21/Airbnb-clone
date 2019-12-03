@@ -4,6 +4,12 @@ const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
 const ATTEMPT_LOGIN = 'ATTEMPT_LOGIN';
 const SEARCH_HOMES = 'SEARCH_HOMES';
+const SHOW_ROOM = 'SHOW_ROOM';
+
+export const showRoom = (id) => ({
+  type: SHOW_ROOM,
+  payload: { id }
+})
 
 export const searchRooms = (term) => ({
   type: SEARCH_HOMES,
@@ -32,10 +38,14 @@ let initState = {
   username: 'Phil',
   searchword: '',
   searchTerms: [],
+  roomSearchId: null,
 }
 
 const reducer = (state = initState, action) => {
   switch (action.type) {
+    
+    case SHOW_ROOM:
+      return Object.assign({}, state, { roomSearchId: action.payload.id })
 
     case SEARCH_HOMES:
       return Object.assign({}, state, { searchword: action.payload.searchword, searchTerms: state.searchTerms.concat(action.payload.searchword) })

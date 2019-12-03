@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  margin: 0;
+  padding: 100px 0 0 0;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.homeImg {
+  height: 500px;
+  margin: auto;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+.description {
+  width: 50%;
+  margin: auto;
+  margin-top: 0;
+}

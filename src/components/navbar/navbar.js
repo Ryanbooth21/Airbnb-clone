@@ -13,6 +13,10 @@ class Navbar extends Component {
     }
   }
   
+  componentDidMount() {
+    console.log(this.props.location)
+  }
+  
   handleChange = (e) => {
     this.setState({
       searchValue: e.target.value,
@@ -61,7 +65,7 @@ class Navbar extends Component {
       </ul>
     )
 
-    const displayNav = loggingIn ? 'none' : 'flex';
+    const displayNav = (loggingIn || this.props.location.pathname === '/login')? 'none' : 'flex';
 
     return (
       <>

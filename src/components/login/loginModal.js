@@ -33,7 +33,7 @@ class LoginModal extends Component {
   render() {
     return (
       <form onSubmit={this.handleLogin}>
-        <div class="container">
+        <div class="formcontainer">
           <label for="uname"><b>Username</b></label>
           <input onChange={this.handleChange} type="text" placeholder="Enter Username" name="uname" required/>
 
@@ -46,7 +46,7 @@ class LoginModal extends Component {
           </label>
         </div>
 
-        <div class="container" style={{backgroundColor:"#f1f1f1"}}>
+        <div class="formcontainer" style={{backgroundColor:"#f1f1f1"}}>
           <button type="button" class="cancelbtn" onClick={()=>this.props.logout(), this.redirect}>Cancel</button>
           <span class="psw">Forgot <a href="#">password?</a></span>
         </div>

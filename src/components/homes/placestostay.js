@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import { homesList } from './homeslist';
+import { showRoom } from '../../redux/redux'; 
+import {connect} from 'react-redux';
 import './placestostay.css';
 
-export default class PlacesToStay extends Component {
+class PlacesToStay extends Component {
+
+  handleClick = (id) => {
+    this.props.showRoom(id);
+    this.props.history.push(`/homes/${id}`);
+  }
+
   render() {
     const places = homesList.map((item)=> {
       return (
-        <div className="box">
+        <div onClick={()=> this.handleClick(item.id)} className="box">
           <div className="img" style={{backgroundImage: `url(${item.img})`}} />
           <div className="description">
             <h5>{item.title}</h5>
@@ -26,3 +34,13 @@ export default class PlacesToStay extends Component {
     )
   }
 }
+
+const actionCreators = {
+  showRoom,
+};
+
+const mapStateToProps = (state) => ({
+  state
+})
+
+export default connect(mapStateToProps, actionCreators)(PlacesToStay);

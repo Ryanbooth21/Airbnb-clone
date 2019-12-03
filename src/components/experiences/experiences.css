@@ -9,12 +9,12 @@
   padding-top: 150px;
 }
 
-h4 {
-  margin: auto auto 30px 30px;
+.boxContainer h4 {
+  margin: auto auto 20px 100px;
 }
 
 .boxlist {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -26,7 +26,6 @@ h4 {
   width: 180px;
   height: 280px;
   flex: auto;
-  cursor: pointer;
 }
 
 .img {
@@ -48,12 +47,4 @@ h4 {
     max-width: 243px;
     max-height: 378px;
   }
-}
-
-.link  {
-  margin: 0;
-  padding: 0;
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
 }
