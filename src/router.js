@@ -18,9 +18,7 @@ class AppRouter extends Component {
           <Route path="/login" component={LoginModal} />
           <Route path="/homes" exact component={PlacesToStay} />
           <Route path="/homes/:id" component={SingleHome} />
-          <Route path="/"  exact component={App}>
-           <Redirect to="/Airbnb-clone" /> 
-          </Route>
+          <Route path="/"  exact component={App}/>
         </Switch>
       </Router>
     );
