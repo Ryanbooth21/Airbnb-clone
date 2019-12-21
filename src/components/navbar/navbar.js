@@ -14,7 +14,7 @@ class Navbar extends Component {
   }
   
   componentDidMount() {
-    console.log(this.props.location)
+    
   }
   
   handleChange = (e) => {
