@@ -14,7 +14,7 @@ class AppRouter extends Component {
       <Router basename="/Airbnb-clone">
         <Navbar />
         <Switch>
-          <Route path="/Airbnb-clone" component={App} />
+          <Route path="/Airbnb-clone" exact component={App} />
           <Route path="/login" component={LoginModal} />
           <Route path="/homes" exact component={PlacesToStay} />
           <Route path="/homes/:id" component={SingleHome} />
