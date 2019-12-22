@@ -18,7 +18,7 @@ class AppRouter extends Component {
           <Route path="/login" component={LoginModal} />
           <Route path="/homes" exact component={PlacesToStay} />
           <Route path="/homes/:id" component={SingleHome} />
-          <Route path="/" component={App}/>
+          <Route path="/" exact component={App}/>
         </Switch>
       </Router>
     );
