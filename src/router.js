@@ -11,14 +11,16 @@ import './App.css';
 class AppRouter extends Component {
   render(){
     return (
-      <HashRouter basename="/">
+      <Router basename="/Airbnb-clone">
         <Navbar />
-          <Route path="/Airbnb-clone" exact component={App} />
+        <Switch>
+          <Route path="/Airbnb-clone" component={App} />
           <Route path="/login" component={LoginModal} />
           <Route path="/homes" exact component={PlacesToStay} />
           <Route path="/homes/:id" component={SingleHome} />
-          <Route path="/"  exact component={App}/>
-      </HashRouter>
+          <Route path="/" component={App}/>
+        </Switch>
+      </Router>
     );
   }
 }
