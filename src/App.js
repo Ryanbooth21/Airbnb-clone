@@ -3,13 +3,13 @@ import {connect} from 'react-redux';
 import Experiences from './components/experiences/experiences';
 import Helpbar from './components/help/helpbar';
 import ContinueSearch from './components/continuesearch/continuesearch';
-import { BrowserRouter, withRouter, Redirect } from 'react-router-dom';
+import { BrowserRouter, withRouter } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
 
   componentDidMount() {
-    this.props.history.push('/')
+    
   }
   
   render() {
