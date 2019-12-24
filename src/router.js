@@ -11,7 +11,7 @@ import './App.css';
 class AppRouter extends Component {
   render(){
     return (
-      <Router basename="/Airbnb-clone">
+      <Router basename="/airbnb-clone">
         <Navbar />
         <Switch>
           <Route path="/login" component={LoginModal} />
