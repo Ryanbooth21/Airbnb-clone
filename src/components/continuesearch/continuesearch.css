@@ -1,13 +1,11 @@
 #container {
   width: 100%;
-  padding-top: 80px;
-  height: 140px;
   display: flex;
   justify-content: center;
+  margin-top: 70px;
 }
 
 .search {
-  height: 100px;
   width: 89%;
 }
 
@@ -18,12 +16,14 @@
 
 #recentTerms {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
 }
 
 .searchBox {
-  width: 47%;
+  margin-bottom: 20px;
+  width: 95%;
   height: 120px;
   display: flex;
   justify-content: flex-start;
@@ -35,12 +35,19 @@
   border-radius: 20px;
 }
 
-@media only screen and (max-width: 800px) {
-  .searchBox {
-    width: 43%;
+@media only screen and (min-width: 650px) {
+  #recentTerms {
+    flex-direction: row;
   }
 
-  #container {
-    padding-top: 120px;
+  .searchBox {
+    width: 44%;
+  }
+
+}
+
+@media only screen and (min-width: 800px) {
+  .searchBox {
+    width: 47%;
   }
 }
