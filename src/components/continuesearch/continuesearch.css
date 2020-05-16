@@ -1,7 +1,7 @@
 #container {
   width: 100%;
   padding-top: 80px;
-  height: 20vh;
+  height: 140px;
   display: flex;
   justify-content: center;
 }
