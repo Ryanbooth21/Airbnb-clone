@@ -2,7 +2,7 @@
   "name": "airbnb-clone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ryanbooth21.github.io/airbnb-clone-react",
+  "homepage": "https://ryanbooth21.github.io/airbnb-clone",
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
