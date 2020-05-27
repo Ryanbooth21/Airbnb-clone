@@ -1,7 +1,7 @@
 .navContainer {
   background-color: white;
   border-bottom: 1px solid lightgray;
-  height: 10.5vh;
+  height: 65px;
   width: 100%;
   position: fixed;
   display: flex;

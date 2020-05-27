@@ -6,11 +6,10 @@
   width: 100%;
   height: auto;
   margin: auto;
-  padding-top: 150px;
 }
 
 .boxContainer h4 {
-  margin: auto auto 20px 100px;
+  margin: auto;
 }
 
 .boxlist {
@@ -23,8 +22,7 @@
 
 .box {
   margin: 18px 5px;
-  width: 180px;
-  height: 280px;
+  flex: 1;
   flex: auto;
 }
 
@@ -33,18 +31,4 @@
   height: 70%;
   background-position: center;
   background-size: cover;
-}
-
-@media screen and (min-width: 750px) {
-  .box {
-    width: 243px;
-    height: 378px;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .box {
-    max-width: 243px;
-    max-height: 378px;
-  }
 }

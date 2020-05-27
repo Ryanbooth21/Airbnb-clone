@@ -1,6 +1,5 @@
 
 body {
-  min-height: 200vh;
   width: 100%;
   margin: auto;
 }
@@ -17,8 +16,3 @@ img {
   height: auto;
 }
 
-@media only screen and (min-width: 800px) {
-  img {
-    width: 75vw;
-  }
-}

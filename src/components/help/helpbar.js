@@ -14,7 +14,7 @@ export default class Helpbar extends Component {
           <div className="cardname">
             <h2>{item.cardName}</h2>
           </div>
-      </div>
+        </div>
       ) 
     });
 
