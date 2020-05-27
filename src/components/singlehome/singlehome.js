@@ -42,7 +42,6 @@ class SingleHome extends Component {
             <h5>Charles is a Superhost</h5>
           </div>    
         </div>
-        
       </div>
     )
   }
